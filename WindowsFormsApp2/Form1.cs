@@ -20,16 +20,7 @@ namespace WindowsFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             int N;
-            try
-            {
-                N = int.Parse(textBox1.Text);
-
-                if (N < 3)
-                {
-                    throw new Exception();
-                }
-            }
-            catch
+            if( !int.TryParse(textBox1.Text, out N) || N < 3 )
             {
                 N = 10;
                 textBox1.Text = "10";
